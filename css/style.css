@@ -1,0 +1,270 @@
+
+  
+  /* 親コンテナ */
+  .line__container {
+    width: 100%;
+    padding:0;
+    background: #7494c0;
+    max-width: 900px;
+    margin: 0px auto;
+    font-size: 80%;
+    /* position: relative; absolute position の要素の親要素として相対配置 */
+    box-sizing: border-box; /* パディングとボーダーを幅に含める */
+    overflow-x: hidden; /*横スクロールを隠す*/
+    min-height: 300px; /* 最小高さを300pxに設定 */
+  }
+
+  
+  /* タイトル部分 */
+  .line__container .line__title {
+    background: #273246;
+    padding: 10px;
+    text-align: center;
+    font-size: 150%;
+    color: #ffffff;
+  }
+  
+  /* 会話部分 */
+  .line__container .line__contents {
+    padding: 10px;
+    overflow-x: hidden;
+    line-height: 135%;
+  }
+  
+  .line__container .scroll {
+    height: 80%;
+    overflow-y: scroll;
+  }
+  
+  
+  /* 相手の会話 */
+  .line__container .line__left {
+    position: relative;
+    display: block;
+    margin: 5px 0;
+    max-width: 80%;
+    margin-left : 0;
+    float: left;
+    clear: both;
+  }
+
+  /* ほかの要素のクリアを確認 */
+  .line__container::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+    
+  .line__container .line__left .line__left-text {
+    margin-left: 70px;
+    padding: 10px 0 0 0;
+  }
+  
+  .line__container .line__left .line__left-text .name {
+    font-size: 80%;
+    color: #ffffff;
+  }
+  
+  /* コメントエリア */
+  .line__container .line__left .text {
+    margin: 0;
+    position: relative;
+    padding: 10px;
+    border-radius: 20px;
+    /* background-color: #ffffff; */
+  }
+    
+  /* 相手の時間エリア */
+  .line__container .line__left .date {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100px;
+    text-align: right;
+    right: -30px;
+    bottom: 0px;
+    font-size: 80%;
+    color: #ffffff;
+  }
+  
+/* 2人目の相手の会話 */
+.line__container .line__center {
+  position: relative; 
+  left: 360px;  /*左からのオフセット位置を指定 */
+  display: block;
+  margin: 5px 0;
+  max-width: 50%;
+  clear: both;
+  top:0;
+}
+  
+.line__container .line__center .line__center-text {
+  margin-left: 70px;
+  padding: 10px 0 0 0;
+}
+
+.line__container .line__center .line__center-text .name {
+  font-size: 80%;
+  color: #ffffff;
+}
+
+/* コメントエリア */
+.line__container .line__center .text {
+  margin: 0;
+  position: relative;
+  padding: 10px;
+  border-radius: 20px;
+  /* background-color: #ffffff; */
+}
+  
+/* 相手の時間エリア */
+.line__container .line__center .date {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100px;
+  text-align: right;
+  right: -30px;
+  bottom: 0px;
+  font-size: 80%;
+  color: #ffffff;
+}
+
+/* 相手2の時間エリア */
+.line__container .line__right .date {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100px;
+  text-align: right;
+  right: -30px;
+  bottom: 0px;
+  font-size: 80%;
+  color: #ffffff;
+}
+
+  /* 自分の会話 */
+  .line__container .line__right {
+      position: relative;
+      display: block;
+      margin: 5px 0;
+      max-width: 75%;
+      float: right;
+      margin-right: 15px;
+      clear: both;
+  }
+  
+  /* コメントエリア */
+  .line__container .line__right .text {
+    padding: 0px;
+    border-radius: 20px;
+    /* background-color: #8de055; */
+    margin: 0;
+    margin-left: 5px;
+  }
+  
+  
+  /* テキストエリア、送信ボタン */
+  .bms_send {
+      background-color:#eee;
+      border-right: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      border-bottom: 0px solid #ddd;
+      height: 48px;
+      padding: 5px;
+      max-width: 400px;
+      margin: 20px auto -13px;
+  }
+  .bms_send_message{
+      width: calc(100% - 75px);/*常に送信ボタンの横幅を引いたサイズに動的に計算*/
+      line-height: 16px;
+      height: 48px;
+      padding: 14px 6px 0px 6px;/*文字がテキストエリアの中心になる様に隙間調整*/
+      border: 1px solid #ccc;
+      border-radius: 4px;/*角丸*/
+      text-align: left;/*文字を左寄せ*/
+      box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.2) inset;/*内側に影を入れてテキストエリアらしくした*/
+      box-sizing: border-box;/*paddingとborderの要素の高さと幅の影響をなくす（要素に高さと幅を含める）*/
+      font-size: 16px;
+  }
+  .bms_send_btn {
+      width: 72px;
+      height: 48px;
+      font-size: 17px;
+      line-height: 3em;
+      float: right;/*bms_sendに対して右寄せ*/
+      color: #fff;
+      font-weight: bold;
+      background: #bcbcbc;
+      text-align: center;/*文字をボタン中央に表示*/
+      border: 1px solid #bbb;
+      border-radius: 4px;/*角丸*/
+      box-sizing: border-box;/*paddingとborderの要素の高さと幅の影響をなくす（要素に高さと幅を含める）*/
+      text-decoration:none;
+  }
+  .bms_send_btn:hover {
+      background: #13178E; /*マウスポインタを当てた時にアクティブな色になる*/
+      cursor: pointer;/*マウスポインタを当てた時に、カーソルが指の形になる*/
+  }
+  
+  .button {
+    width: 70px;
+    height: 48px;
+    border-radius : 5%;          /* 角丸       */
+    font-size     : 15pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    font-weight: bold;
+    padding       : 12px 10px;   /* 余白       */
+    background    : #bcbcbc;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1.5em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    border: 1px solid #bbb;
+  }
+  .button:hover {
+    background    : #13178E;     /* 文字色     */
+  }
+  
+
+  #output .line__left {
+    /* 左寄せのスタイル */
+    text-align: left;
+    text-decoration-thickness: 5px;
+    background: greenyellow;     /* 背景色     */
+    border: 1px solid #bbb;
+    width: 200px;          /* 箱の幅 */
+    padding: 10px;         /* 内側の余白 */
+    margin: 5px 0;         /* 上下の外側余白 */
+    border-radius: 5px;    /* 角を丸くする */
+}
+
+#output .line__center {
+    /* 中央寄せのスタイル */
+    text-align: center;
+    background: yellow;     /* 背景色 */
+    border: 1px solid #bbb;
+    width: 200px;           /* 箱の幅を指定 */
+    padding: 10px;          /* 内側の余白を指定 */
+    margin: 5px 0;       /* 上下の外側余白、左右のautoで中央揃え */
+    border-radius: 5px;     /* 角を丸くする */
+    display: block;
+    clear: both;
+}
+    
+    
+    #output .line__right {
+    /* 右寄せのスタイル */
+    text-align: right;
+    background    : orange;     /* 背景色     */
+    border: 1px solid #bbb;
+    width: 150px;           /* 箱の幅を指定 */
+    padding: 10px;          /* 内側の余白を指定 */
+    margin: 5px 0;       /* 上下の外側余白を設定 */
+    border-radius: 5px;     /* 角を丸くする */
+    float: right;  /* 右よせ*/
+    clear: both;  /* フロートをクリア */
+    
+}
+
+
